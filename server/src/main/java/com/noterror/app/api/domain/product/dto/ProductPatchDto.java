@@ -1,38 +1,41 @@
 package com.noterror.app.api.domain.product.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import java.time.LocalDateTime;
+import javax.validation.constraints.Pattern;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Builder
 @AllArgsConstructor
-<<<<<<< HEAD:server/src/main/java/com/noterror/app/api/domain/product/dto/ProductRequestDto.java
-public class ProductRequestDto {
-=======
-public class ProductPostDto {
+public class ProductPatchDto {
+    private Long productId;
+
     @NotBlank(message = "이름을 입력해주세요.")
     @Length(max=50)
->>>>>>> f468b30e2b59c96311bf19da3aab830808efc6a1:server/src/main/java/com/noterror/app/api/domain/product/dto/ProductPostDto.java
     private String productName;
-
-    @NotBlank(message = "수량을 입력해주세요.")
-    @Min(1)
-    private int quantity;
 
     @NotBlank(message = "가격을 입력해주세요.")
     @Min(100)
     private int price;
 
+    @NotBlank(message = "수량을 입력해주세요.")
+    @Min(1)
+    private int quantity;
+
     @NotBlank(message = "썸네일 이미지를 첨부해주세요.")
     private String thumbnailImage;
 
     @NotBlank(message = "상세 설명 이미지를 첨부해주세요.")
-    private  String detailImage;
+    private String detailImage;
+
+    public void setProductId(Long productId){
+        this.productId = productId;
+    }
 }

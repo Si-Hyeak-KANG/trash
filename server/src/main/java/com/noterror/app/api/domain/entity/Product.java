@@ -19,13 +19,20 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
 
+    @Column(nullable = false)
     private String productName;
 
+    @Column(nullable = false)
     private int price;
 
+<<<<<<< HEAD
+=======
+    @Column(nullable = false)
+>>>>>>> f468b30e2b59c96311bf19da3aab830808efc6a1
     private int quantity;
 
-    private LocalDateTime signDate;
+    @Column(nullable = false)
+    private LocalDateTime signDate = LocalDateTime.now();
 
     @Lob
     @Basic(fetch = FetchType.EAGER)
