@@ -1,6 +1,5 @@
 package com.noterror.app.infra.config;
 
-import com.noterror.app.api.domain.member.memberService.MemberService;
 import com.noterror.app.infra.auth.CustomAuthorityUtils;
 import com.noterror.app.infra.filter.JwtAuthenticationFilter;
 import com.noterror.app.infra.filter.JwtVerificationFilter;
@@ -90,6 +89,4 @@ public class SecurityConfig {
                     .addFilterAfter(jwtVerificationFilter, JwtAuthenticationFilter.class);
         }
     }
-
-
 }

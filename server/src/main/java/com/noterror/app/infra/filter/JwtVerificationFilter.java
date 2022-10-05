@@ -2,7 +2,6 @@ package com.noterror.app.infra.filter;
 
 import com.noterror.app.infra.auth.CustomAuthorityUtils;
 import com.noterror.app.infra.jwt.JwtTokenizer;
-import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

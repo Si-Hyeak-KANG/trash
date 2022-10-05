@@ -16,7 +16,6 @@ public class MemberDetailsService implements UserDetailsService {
     private final MemberRepository memberRepository;
     private final CustomAuthorityUtils authorityUtils;
 
-
     public MemberDetailsService(MemberRepository memberRepository, CustomAuthorityUtils authorityUtils) {
         this.memberRepository = memberRepository;
         this.authorityUtils = authorityUtils;
@@ -28,6 +27,4 @@ public class MemberDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new BusinessLogicException(MEMBER_NOT_FOUND));
         return new MemberDetails(findMember, authorityUtils);
     }
-
-
 }
